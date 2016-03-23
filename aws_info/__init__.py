@@ -14,6 +14,7 @@ from storage import get_orphaned_snapshots, get_unattached_volumes
 from instances import get_unnamed_instances
 from secgroups import get_open_secgroups
 
+
 def real_main():
     dashes = "-----------------------------------------------"
     ec2_conn = boto.ec2.connect_to_region("eu-west-1",
@@ -41,7 +42,7 @@ def real_main():
     unassigned_addresses = get_unassociated_eips(ec2_conn)
     if unassigned_addresses:
         print("Unassigned EIPs\n{0}".format(dashes))
-        for addr in unassigned_adresses:
+        for addr in unassigned_addresses:
             print(addr)
         print("{0}".format(dashes))
 
